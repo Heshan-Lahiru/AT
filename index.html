@@ -42,19 +42,30 @@
 
     </header>
 
-<section>
-  <div class="image-container">
-    <img src="image/head.png" class="img-fluid" alt="hero section">
-    <div class="box">
-      <div class="text-container">
-        <h1 class="text-white">We crush your <br>competitors, goals, AND <br>sales records - without<br> the B.S.<br>
-          <button id="asideMenu" class="btn btn-sm px-3 py-2" style="background-color:#F28D35; color:white;">Get free consultation</button>
-        </h1>
-      </div>
-    </div>
-  </div>
-</section>
-
+    <section>
+      <div class="image-container">
+        <img src="image/head.png" class="img-fluid" alt="hero section">
+       
+          <div class="text-container">
+            <h1 class="text-white">We crush your <br>competitors, goals, AND <br>sales records - without<br> the B.S.<br>
+              <button id="asideMenu" class="btn btn-sm px-3 py-2" style="background-color:#F28D35; color:white;">Get free consultation</button>
+            </h1>
+          </div>
+        </div>
+     
+    </section>
+   
+    <section>
+     
+       
+          <div class="text-container-two">
+            <h1 class="text-white">We crush your competitors, <br>goals, AND sales records -<br> without the B.S.<br>
+              <button id="asideMenu" class="btn btn-sm px-3 py-2" style="background-color:#F28D35; color:white;">Get free consultation</button>
+            </h1>
+          </div>
+       
+     
+    </section>
 
   
 
@@ -78,15 +89,15 @@
     
     </div>
     </section></div>
-    <section class="container py-9 mt-5">
+    <section class="container py-9 mt-5" style="padding: 20px;">
         <div class="row">
-            <div class="col-32 col-lg-6">
+            <div id="digitalStrategyText" class="col-32 col-lg-6">
                 <h2  style="color:#6B3CC9">Digital Strategy Consulting</h2>
                 <p>
                   Your digital strategy should complement the overall marketing strategy of the company. In online marketing, each component will never work in isolation and every business needs a different mix. We provide a clear concept and strategic overview to find the most efficient model for your business. </p>
                 <button class="btn  px-2 py-2 "  style="background-color:#F28D35; color:white;  ">LEARN MORE</button>
             </div>
-            <div class="col-32 col-lg-5">
+            <div id="searchbar" class="col-32 col-lg-5">
                 <img src="image/searchbar.png" class="img-fluid" alt=" computer">
         
             </div>
@@ -98,10 +109,10 @@
               <div class="row d-flex justify-content-end">
                 <div class="col-md-4">
                       <img class="navbar-brand" class="img-fluid" src="image/logo.png" alt="logo"><br><br>
-                  <p class="text-white">Your goal is our target. Not anything in between. We use online marketing 
+                  <p class="text-white" style="font-size:0.9rem;">Your goal is our target. Not anything in between. We use online marketing 
                     platforms and tools to achieve single objective - your business results.</p></div>
-                    <div class="col-md-4 row align-items-right">
-                
+                  
+                    <div class="col-md-4 row align-items-right ">
                   <h5 class="text-white">Our Technologies</h5>
                   <ul class="list-unstyled">
                     <li><a style="text-decoration: none; color:white" href="#">React.JS</a></li>
@@ -112,7 +123,7 @@
                   </ul>
                 </div>
                
-                <div class="col-md-4 ">
+                <div class="col-md-4 row align-items-right ">
                   <h5 class="text-white">Our Services</h5>
                  
                   <ul class="list-unstyled">
@@ -134,8 +145,8 @@
            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
           
            <script type="text/javascript">
-           let hamburIcon = document.getElementById("hamburIcon");
-let asideMenu = document.getElementById("asideMenu");
+         let hamburIcon = document.getElementById("hamburIcon");
+let asideMenu = document.getElementById("navbarSupportedContent");
 
 let menuClicked = false;
 
@@ -146,9 +157,80 @@ hamburIcon?.addEventListener("click", () => {
     asideMenu.style.display = "none";
   } else {
     asideMenu.style.display = "flex";
+    asideMenu.style.alignItems = "center";
+    asideMenu.style.justifyContent = "center";
   }
 });
-          </script>
+//=============================================================================================
+window.addEventListener("resize", function() {
+  const element = document.querySelector(".col-12.col-lg-6");
+  const isSmallScreen = window.innerWidth <= 770;
+
+  if (isSmallScreen) {
+    element.style.textAlign = "center"; 
+  } else {
+    element.style.textAlign = ""; 
+  }
+});
+
+window.addEventListener("load", function() {
+  window.dispatchEvent(new Event("resize"));
+});
+//=======================================================================================searchbar
+function swapPositions() {
+  const screenWidth = window.innerWidth;
+  const searchbar = document.getElementById('searchbar');
+  const digitalStrategyText = document.getElementById('digitalStrategyText');
+  const parentContainer = digitalStrategyText.closest('.row');
+
+  if (screenWidth <= 770) {
+    
+    parentContainer.insertBefore(searchbar, digitalStrategyText);
+    digitalStrategyText.style.textAlign = "center"; 
+  } else {
+    
+    parentContainer.insertBefore(searchbar, digitalStrategyText.nextSibling);
+    digitalStrategyText.style.textAlign = ""; 
+  }
+}
+
+
+window.addEventListener('resize', function() {
+  swapPositions();
+});
+
+window.addEventListener('load', function() {
+  swapPositions();
+});
+
+     //==========================================================================================head image and text down and hide
+     window.addEventListener('resize', function() {
+  swapPositions();
+  adjustTextContainers();
+});
+
+window.addEventListener('load', function() {
+  swapPositions();
+  adjustTextContainers();
+});
+
+function adjustTextContainers() {
+  const screenWidth = window.innerWidth;
+  const textContainer = document.querySelector('.text-container');
+  const textContainerTwo = document.querySelector('.text-container-two');
+
+  if (screenWidth <= 800) {
+    textContainer.style.display = 'none';
+    textContainerTwo.style.display = 'block';
+  } else {
+    textContainer.style.display = 'block';
+    textContainerTwo.style.display = 'none';
+  }
+}
+
+    
+
+</script>
 
   </body>
 </html>
