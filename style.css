@@ -1,26 +1,34 @@
-body{
-  
-}
+
 header{
     background: #6B3CC9;
 }
   
 
 .footer {
+  
   background-color: #6B3CC9;
 }
+
 
 .image-container {
   position: relative; 
   width: 100%; 
 }
 
-.box {
+.text-container {
   position: absolute; 
   top: 70%; 
   left: 30%; 
   transform: translate(-50%, -50%); 
   width: 50%; 
+  height: 50%; 
+  background-image: linear-gradient(to right, #1CBDDD 0%, #4DCA79 100%);
+}
+
+.text-container-two{
+ 
+padding:10px;
+  width: 100%; 
   height: 50%; 
   background-image: linear-gradient(to right, #1CBDDD 0%, #4DCA79 100%);
 }
