@@ -7,39 +7,38 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 <link rel="stylesheet"  href="style.css">  
 <style>
-    
+
+  
 </style>
 </head>
   <body>
    <header>
 
-    <nav class="navbar navbar-expand-lg ">
-        <div class="container">
-            <img class="navbar-brand"  class="img-fluid" src="image/logo.png" alt="logo">
-
-          
-            <button class="navbar-toggler" id="hamburIcon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+          <img class="navbar-brand img-fluid" src="image/logo.png" alt="logo">
+          <button class="navbar-toggler" id="hamburIcon" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
               <span class="navbar-toggler-icon"></span>
-            </button>
+          </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                  <a class="nav-link text-white" aria-current="page" href="#">SERVICES</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#">ABOUT US</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#">CONTACT US</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" href="#">CAREERS</a>
-                </li>
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                  <li class="nav-item">
+                      <a class="nav-link text-white" aria-current="page" href="#">SERVICES</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white" href="#">ABOUT US</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white" href="#">CONTACT US</a>
+                  </li>
+                  <li class="nav-item">
+                      <a class="nav-link text-white" href="#">CAREERS</a>
+                  </li>
               </ul>
-                </div>
-        </div>
-      </nav>
-
+          </div>
+      </div>
+  </nav>
+  
     </header>
 
     <section>
@@ -73,8 +72,8 @@
 <div class="section-container">
 <section class="container py-8 mt-5 ">
     <div class="row">
-        <div class="col-32 col-lg-6">
-            <img src="image/com.png" class="img-fluid" alt=" computer">
+        <div id="com" class="col-32 col-lg-6">
+            <img id="com" src="image/com.png" class="img-fluid" alt=" computer">
     
         </div>
         <div class="col-12 col-lg-6">
@@ -111,7 +110,7 @@
                       <img class="navbar-brand" class="img-fluid" src="image/logo.png" alt="logo"><br><br>
                   <p class="text-white" style="font-size:0.9rem;">Your goal is our target. Not anything in between. We use online marketing 
                     platforms and tools to achieve single objective - your business results.</p></div>
-                  
+              
                     <div class="col-md-4 row align-items-right ">
                   <h5 class="text-white">Our Technologies</h5>
                   <ul class="list-unstyled">
@@ -136,7 +135,7 @@
                 </div>
               
                             </div>
-                            <div class="container text-center">  <hr style="width: 50%; height: 2px; background-color: white; margin: 0 auto;">
+                            <div class="container text-center">  <hr style="width: 50%; height: 2px; background-color: #ccc; margin: 0 auto;">
                               <span style="text-decoration: none; color:white"><a style="text-decoration: none; color:white" href="#">Privacy Policy</a></span><span style=" color:white"> | </span><span style="text-decoration: none; color:white"><a style="text-decoration: none; color:white" href="#">Terms & Conditions</a></span>
                             </div>
                                    </div>
@@ -144,93 +143,8 @@
              
            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
           
-           <script type="text/javascript">
-         let hamburIcon = document.getElementById("hamburIcon");
-let asideMenu = document.getElementById("navbarSupportedContent");
+           <script src="script.js"></script>
 
-let menuClicked = false;
-
-hamburIcon?.addEventListener("click", () => {
-  menuClicked = !menuClicked;
-
-  if (!menuClicked) {
-    asideMenu.style.display = "none";
-  } else {
-    asideMenu.style.display = "flex";
-    asideMenu.style.alignItems = "center";
-    asideMenu.style.justifyContent = "center";
-  }
-});
-//=============================================================================================
-window.addEventListener("resize", function() {
-  const element = document.querySelector(".col-12.col-lg-6");
-  const isSmallScreen = window.innerWidth <= 770;
-
-  if (isSmallScreen) {
-    element.style.textAlign = "center"; 
-  } else {
-    element.style.textAlign = ""; 
-  }
-});
-
-window.addEventListener("load", function() {
-  window.dispatchEvent(new Event("resize"));
-});
-//=======================================================================================searchbar
-function swapPositions() {
-  const screenWidth = window.innerWidth;
-  const searchbar = document.getElementById('searchbar');
-  const digitalStrategyText = document.getElementById('digitalStrategyText');
-  const parentContainer = digitalStrategyText.closest('.row');
-
-  if (screenWidth <= 770) {
-    
-    parentContainer.insertBefore(searchbar, digitalStrategyText);
-    digitalStrategyText.style.textAlign = "center"; 
-  } else {
-    
-    parentContainer.insertBefore(searchbar, digitalStrategyText.nextSibling);
-    digitalStrategyText.style.textAlign = ""; 
-  }
-}
-
-
-window.addEventListener('resize', function() {
-  swapPositions();
-});
-
-window.addEventListener('load', function() {
-  swapPositions();
-});
-
-     //==========================================================================================head image and text down and hide
-     window.addEventListener('resize', function() {
-  swapPositions();
-  adjustTextContainers();
-});
-
-window.addEventListener('load', function() {
-  swapPositions();
-  adjustTextContainers();
-});
-
-function adjustTextContainers() {
-  const screenWidth = window.innerWidth;
-  const textContainer = document.querySelector('.text-container');
-  const textContainerTwo = document.querySelector('.text-container-two');
-
-  if (screenWidth <= 800) {
-    textContainer.style.display = 'none';
-    textContainerTwo.style.display = 'block';
-  } else {
-    textContainer.style.display = 'block';
-    textContainerTwo.style.display = 'none';
-  }
-}
-
-    
-
-</script>
 
   </body>
 </html>
