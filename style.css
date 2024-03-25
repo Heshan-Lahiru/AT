@@ -2,7 +2,64 @@
 header{
     background: #6B3CC9;
 }
-  
+
+
+/* =========================================================   */
+
+@media (max-width: 700px) {
+  .navbar-collapse {
+    position: fixed;
+    top: 70px;
+    right: -100%; 
+    width: 30%; 
+    height: 50vh;
+    background-color: #6B3CC9; 
+    z-index: 1000;
+    transition: right 0.3s ease;
+  }
+
+  .navbar-collapse.show {
+    right: 15px; 
+  }
+
+  .navbar-nav {
+    flex-direction: column; 
+    margin-top: 0px;
+  }
+
+  .navbar-nav .nav-item {
+    padding: 10px;
+    border-bottom: 1px solid #555; 
+  }
+}
+
+@media (min-width: 500px) {
+  .navbar-collapse {
+    position: static !important;
+    right: auto !important; 
+    width: auto !important; 
+    height: auto !important; 
+    background-color: transparent !important; 
+    z-index: auto !important; 
+    transition: none !important; 
+    display: block !important;
+  }
+  .navbar-toggler {
+    display: none; 
+}
+.navbar-nav {
+  display: flex; 
+  align-items: center; 
+}
+
+.navbar-nav .nav-item {
+  margin-right: 15px; 
+}
+
+}
+
+
+/*  */
 
 .footer {
   
@@ -40,4 +97,66 @@ padding:10px;
 }
 
 
+/* ==============================================*/
 
+@media (max-width:750px) {
+  .navbar > .navbar-toggler {
+    display: inline-block;
+    position: absolute;
+    right: 0px;
+    top: 0px;
+  }
+  .navbar > .navbar-toggler > label {
+    height: 50px;
+    padding: 13px;
+    display: inline-block;
+    width: 50px;
+  }
+  .navbar > .navbar-toggler > label:hover,.navbar  #nav-check:checked ~ .navbar-toggler > label {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+  .navbar > .navbar-toggler > label > span {
+    height: 10px;
+    border-top: 2px solid #eee;
+    display: block;
+    width: 25px;
+  }
+  .navbar > .nav-link {
+    position: absolute;
+    height: 0px;
+    transition: all 0.3s ease-in;
+    overflow-y: hidden;
+    top: 50px;
+    display: block;
+    width: 100%;
+    background-color: #333;
+    left: 0px;
+  }
+  .navbar > .nav-link > ul li a {
+    display: block;
+    width: 100%;
+  }
+  /*   */
+  
+    .navbar > .nav-link > ul li{
+      padding: 0;
+      background-color: #333;
+      display: block;
+      margin-bottom: 20px;
+       
+    }
+    .navbar > .nav-link > ul li a{
+        margin-left: 40%;
+    }
+    .navbar .nav-link ul a.icon{
+      margin-left: 33%;
+    }
+  /*   */
+  .navbar > #nav-check:not(:checked) ~ .nav-link {
+    height: 0px;
+  }
+  .navbar > #nav-check:checked ~ .nav-link {
+    height: calc(100vh – 50px);
+    overflow-y: auto;
+  }
+}
